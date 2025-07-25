@@ -53,6 +53,7 @@ public class ValidAnagram {
             countS.put(s.charAt(i), countS.getOrDefault(s.charAt(i), 0) + 1);
             countT.put(t.charAt(i), countT.getOrDefault(t.charAt(i), 0) + 1);
         }
+
         return countS.equals(countT);
     }
 }
