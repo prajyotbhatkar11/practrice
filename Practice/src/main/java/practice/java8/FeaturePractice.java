@@ -2,10 +2,7 @@ package practice.java8;
 
 import practice.java8.vo.*;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -71,6 +68,9 @@ public class FeaturePractice {
         findOldestPerson(people);
         System.out.println("Question 11 Answer :");
         findSecondHighestSalary(employees);
+        System.out.println("Question 12 Answer :");
+        List<String> strings = Arrays.asList("cat", "elephant", "tiger", "hippopotamus");
+        findLongestString(strings);
 
     }
 
@@ -247,6 +247,25 @@ public class FeaturePractice {
                 .skip(1)
                 .findFirst()
                 .ifPresent(System.out::println);
+    }
+
+    //12. Longest String in List
+//Input:
+//List<String> strings = Arrays.asList("cat", "elephant", "tiger", "hippopotamus");
+//Task: Find the longest string in the list.
+    public static void findLongestString(List<String> strings) {
+        Optional<String> first = strings.stream()
+                .max(Comparator.comparing(String::length));
+        first.ifPresent(System.out::println);
+    }
+//    13. Merge Two Lists and Remove Duplicates
+//Input:
+//List<Integer> list1 = Arrays.asList(1, 2, 3, 4, 5);
+//List<Integer> list2 = Arrays.asList(3, 4, 5, 6, 7);
+//Task: Merge both lists, remove duplicates, and sort in ascending order.
+
+    public static void mergeAndRemoveDuplicate(List<Integer> list1, List<Integer> list2) {
+
     }
 
 }
